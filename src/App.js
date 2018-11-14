@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import './App.scss'
-import {Route, NavLink, Switch} from 'react-router-dom'
+import {Route, NavLink, Switch, Redirect} from 'react-router-dom'
 import About from './About/About'
 import Cars from './Cars/Cars'
 import CarDetail from "./CarDetail/CarDetail";
@@ -49,6 +49,10 @@ class App extends Component {
                     <Route path='/about' component={About}/>
                     <Route path='/cars/:name' component={CarDetail}/>
                     <Route path='/cars' component={Cars}/>
+                    {/*first variant of error handling*/}
+                    {/*<Route render={() => <h1 style={{color: 'red', textAlign: 'center'}}>404 not found</h1>}/>*/}
+                    {/*second variant of error handling*/}
+                    <Redirect to={'/'}/>
                 </Switch>
             </div>
         );
