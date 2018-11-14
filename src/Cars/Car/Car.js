@@ -3,7 +3,8 @@ import './Car.scss'
 
 
 const Car = props => {
-  return (
+    console.log('props of Car', props);
+    return (
     <div className={'Car'}>
       <h3>Сar name: {props.name}</h3>
       <p>Year: <strong>{props.year}</strong></p>
